@@ -1,8 +1,8 @@
 from P2PB2BEX.p2pb2b_api import Api
 
 
-key = ''
-secret = ''
+key = 'bde29aece568c883440467704f905aaf'
+secret = '04d0fb31152555a7d34a26b906e14a49'
 p2p_api = Api(key,secret)
 class P2PB2B_API:
 	
@@ -14,7 +14,17 @@ class P2PB2B_API:
 			return float(data.get('result').get('last'))
 		else:
 			return None
-	
+		
+	#获取K线数据
+	def get_kline_data(self,symbol,interval,offset=0,limit=100):
+		
+		data = p2p_api.public.market.kline(market=symbol,interval=interval,offset=offset,limit=limit)
+		"""
+		m -> minutes; h -> hours; d -> days;
+		interval:1m,1h,1d...
+		"""
+		return data
+		
 	#获取账户某币种可用余额
 	def get_balance(self,base):
 		data = p2p_api.account.balance(currency = base)
@@ -64,4 +74,4 @@ class P2PB2B_API:
 
 if __name__ == "__main__":
 	q = P2PB2B_API()
-	print(q.get_balance('USDT'))
+	print(q.get_kline_data('BTC_USDT','1m'))
