@@ -1,8 +1,8 @@
 from P2PB2BEX.p2pb2b_api import Api
 
 
-key = 'bde29aece568c883440467704f905aaf'
-secret = '04d0fb31152555a7d34a26b906e14a49'
+key = ''
+secret = ''
 p2p_api = Api(key,secret)
 class P2PB2B_API:
 	
