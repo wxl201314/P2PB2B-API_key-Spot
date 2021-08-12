@@ -5,8 +5,8 @@
 
 # base url
 P2P_Base_URL = 'https://p2pb2b.io'
-KEY = 'bde29aece568c883440467704f905aaf'
-secretKey = '04d0fb31152555a7d34a26b906e14a49'
+KEY = ''
+secretKey = ''
 
 # Get info on all markets.
 # curl --location --request GET "http://api.p2pb2b.io/api/v2/public/markets"
